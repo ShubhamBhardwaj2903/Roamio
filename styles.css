@@ -1,0 +1,670 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Nidus Sans';
+    src: url('path/to/nidus-sans-regular.woff2') format('woff2'),
+        url('path/to/nidus-sans-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nidus Sans';
+    src: url('path/to/nidus-sans-bold.woff2') format('woff2'),
+        url('path/to/nidus-sans-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* -----fonts----- */
+    --font-riviera: 'Riviera', sans-serif;
+    --font-poppins: 'Poppins';
+    --font-nidusSans: 'Nidus Sans', Arial, sans-serif;
+
+    /* ----font-colors---- */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: #0095FF;
+    --color-grey: #858585;
+
+    /* ----font sizes---- */
+    --font-size-mini: 12px;
+    --font-size-small: 15px;
+    --font-size-medium: 20px;
+    --font-size-l: 25px;
+    --font-size-xl: 30px;
+    --font-size-xxl: 42px;
+    --font-size-largest: 90px;
+
+    /* ----font weights---- */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+    /* ----border radiuses---- */
+    --br-s: 5px;
+    --br-m: 10px;
+    --br-l: 20px;
+}
+
+body{
+    /* background-color: #D9D9D9; */
+
+}
+.main {
+    background-color: #D9D9D9;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #D9D9D9;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 10% 1fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    margin: 0 10%;
+    height: 10vh;
+    font-family: var(--font-poppins);
+    /* z-index: 1; */
+}
+
+header a {
+    color: var(--color-white);
+}
+
+.logo-container {
+    grid-column: 2;
+}
+
+nav {
+    grid-column: 3 / span 6;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 10px;
+}
+nav ul li a:hover{
+    color: var(--color-primary);
+}
+nav a {
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 10%;
+    color: var(--color-white);
+    /* background-image: url(assets/img1.jpg); */
+}
+
+.hero-title {
+    font-size: var(--font-size-largest);
+    font-family: var(--font-riviera);
+    padding-top: 10%;
+    margin-bottom: 5%;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transition: opacity 0.5s ease;
+}
+
+.hero-desc {
+    font-size: var(--font-size-medium);
+    font-family: var(--font-poppins);
+    margin-bottom: 7%;
+}
+
+.hero .call-to-action-buttons button {
+    width: 327px;
+    height: 50px;
+    padding: 11px 95px;
+    margin-right: 2%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #FFF;
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+    font-size: var(--font-size-medium);
+    font-family: var(--font-nidusSans);
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.call-to-action-buttons button:hover{
+    background: var(--color-white);
+    color: var(--color-primary);
+    box-shadow: 0 0 200px 20px var(--color-primary);
+}
+
+/* ---- SECTION : POPULAR ITINERARIES ---- */
+
+.popular-itineraries {
+    height: auto;
+    color: var(--color-white);
+    font-family: var(--font-nidusSans);
+    margin: 5% 10% 10% 10%;
+}
+
+.iti_title {
+    font-size: var(--font-size-xxl);
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+}
+
+.iti-section {
+    height: auto;
+}
+
+.iti_title1,
+.iti_title2 {
+    font-size: var(--font-size-l);
+    color: var(--color-black);
+    margin-bottom: 4%;
+}
+
+.sec-1-columns,
+.sec-2-columns {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.column1,
+.column2,
+.column3,
+.column4,
+.column5,
+.column6 {
+    width: 30%;
+    height: auto;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    border-radius: var(--br-l);
+    box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
+}
+
+.column1-img-container {
+    width: 100%;
+}
+
+.text-top {
+    position: absolute;
+    padding: 20px;
+    z-index: 1;
+    font-family: var(--font-nidusSans);
+    color: var(--color-black);
+}
+
+.col1-sec {
+    display: flex;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white);
+    padding: 15px;
+    color: var(--color-black);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.col1-sec1-txt1,
+.col3-sec1-txt1 {
+    font-size: var(--font-size-small);
+    color: var(--color-black);
+}
+
+.col1-sec1-txt2,
+.col3-sec1-txt2 {
+    margin-top: 5%;
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-mini);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-black);
+}
+
+.col1-sec2-txt1,
+.col3-sec2-txt1 {
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-regular);
+    text-align: right;
+    margin-bottom: 6%;
+    color: var(--color-black);
+}
+
+.col1-sec2 button,
+.col3-sec2 button {
+    width: 120px;
+    height: 33px;
+    border-radius: var(--br-s);
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+}
+
+.col3-sec {
+    display: flex;
+    padding: 15px;
+    bottom: 0;
+    left: 0;
+    border-radius: 0px 0px 20px 20px;
+}
+
+/* ---- SECTION : WHAT SETS US APART ---- */
+
+.sets-us-apart {
+    height: 75vh;
+    margin: 0% 10%;
+}
+
+.title2 {
+    color: var(--color-primary);
+    font-family: var(--font-nidusSans);
+}
+
+.sua-section1 {
+    display: flex;
+}
+
+.sua-description {
+    width: 60%;
+    color: var(--color-black);
+    margin-top: 10%;
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-small);
+}
+
+.lotte-animation{
+    width: 40%;
+}
+/* ---- SECTION : SERVICES ---- */
+.services {
+    margin: 5% 10%;
+}
+
+.title3 {
+    color: var(--color-primary);
+    font-family: var(--font-nidusSans);
+}
+
+.section-row-1,
+.section-row-2 {
+    display: flex;
+}
+
+.cont1 {
+    color: var(--color-black);
+    margin-right: 3.5%;
+    margin-left: 3.5%;
+    border-radius: var(--br-l);
+    padding: 18px 18px 0px 18px;
+    margin-top: 4%;
+}
+
+.cont1:hover {
+    box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
+}
+
+.service-img {
+    width: 100%;
+}
+
+.service-txt {
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-medium);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* ----- SECTION : TRAVELER TESTIMONIALS  */
+
+.testimonials {
+    height: 83vh;
+    margin: 10%;
+}
+
+.title4 {
+    color: var(--color-primary);
+    font-family: var(--font-nidusSans);
+}
+
+.testimonials-section {
+    display: flex;
+    margin-top: 4%;
+}
+
+.review1,
+.review2 {
+    display: flex;
+    border-radius: var(--br-l);
+    box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    margin-top: 4%;
+    width: 70%;
+}
+
+.review2 {
+    margin-left: 30%;
+}
+
+.review-descp {
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-mini);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-black);
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.review-images {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.review-img-1 {
+    width: 70%;
+    height: auto;
+}
+
+.review-img-2 {
+    width: 100%;
+    height: auto;
+}
+
+/* ---- SECTION : NEWSLETTER ---- */
+
+.newsletter {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-top: 10%;
+    display: flex;
+}
+
+.newsletter-title {
+    font-family: var(--font-poppins);
+    margin: 10% 10% 5% 10%;
+}
+
+.newsletter-desc {
+    margin: 0% 10% 5% 10%;
+    font-family: var(--font-poppins);
+    font-weight: var(--font-weight-medium);
+}
+
+.email_input {
+    margin: 5% 10%;
+    width: 600px;
+    height: 60px;
+    background-color: var(--color-white);
+    position: relative;
+    display: inline-block;
+}
+
+.email_input input[type="email"] {
+    width: 600px;
+    height: 60px;
+    padding-right: 200px;
+    padding-left: 30px;
+    text-decoration: none;
+    border: none;
+    color: var(--color-black);
+    font-size: var(--font-size-small);
+}
+
+.email_input button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2% 3%;
+    width: 150px;
+    height: 35px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-small);
+    border: none;
+}
+
+.newsletter-img {
+    width: 289px;
+    height: 320px;
+    margin-top: 5%;
+    margin-right: 10%;
+}
+
+/* ---- SECTION : SERVICES ---- */
+
+footer {
+    width: 100%;
+    height: 40vh;
+    background-color: #150C21;
+    padding: 5% 10%;
+    display: flex;
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+}
+
+.footer-sec1 {
+    width: 35%;
+    margin-right: 3%;
+}
+
+.footer-sec1 img {
+    margin-bottom: 5%;
+}
+
+.footer-sec2 {
+    list-style: none;
+    margin-right: 3%;
+    width: 20%;
+}
+
+/* .footer-sec2 li {
+    margin-left: 15%;
+} */
+
+.footer-sec2 h3,
+.footer-sec3 h3,
+.footer-sec4 h3 {
+    margin-bottom: 5%;
+}
+
+.footer-sec3 {
+    margin-right: 3%;
+
+}
+
+.footer-sec4 {
+    width: 20%;
+    height: 130px;
+    text-align: center;
+}
+
+.image-container {
+    display: inline-block;
+}
+
+.footer-sec4 img {
+    width: 100px;
+    justify-items: center;
+    align-items: center;
+    display: inline-block;
+}
+
+@media only screen and (min-width: 992px) {
+    main {
+        width: 100%
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    main {
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .text-top {
+        position: absolute;
+        padding: 20px;
+        width: 20%;
+        color: var(--color-black);
+        font-size: var(--font-size-small);
+    }
+
+    .col1-sec {
+        display: block;
+    }
+
+    .col1-sec2-txt1,
+    .col3-sec2-txt1 {
+        text-align: left;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    .col1-sec2 button,
+    .col3-sec2 button {
+        width: 100%;
+        margin: 3% 0;
+    }
+
+    .sets-us-apart {
+        height: 70vh;
+    }
+
+    .sua-section1 {
+        height: 70vh;
+    }
+    
+    .lotte-animation{
+        width: 50%;
+    }
+
+    .sua-description {
+        font-size: var(--font-size-mini);
+        height: 50vh;
+        width:50%;
+    }
+
+    .review-images {
+        display: none;
+    }
+
+    .review-descp {
+        padding: 5px;
+    }
+
+    .newsletter-sec1 {
+        width: 70%;
+    }
+
+    .newsletter-desc {
+        margin-top: 7%;
+    }
+
+    .email_input {
+        margin-top: 10%;
+    }
+
+    .newsletter-img {
+        width: 30%;
+        height: fit-content;
+    }
+
+}
+
+@media only screen  and (min-width: 390px) and (max-width: 767px) {
+    main {
+        width: 100%;
+    }
+    /* .navbar{
+        display: none;
+    } */
+    .section {
+        width: 100%;
+        height: 100vh;
+    }
+    .iti_title1, .iti_title2{
+        font-size: var(--font-size-xl);
+    }
+    .sec-1-columns, .sec-2-columns{
+        display: initial;
+    }
+    .column1,.column2,.column3,.column4,.column5,.column6{
+        width:70%;
+        margin: 10% 15%;
+    }
+    .col1-sec1-txt1{
+        font-size: var(--font-size-l);
+    }
+    .col1-sec1-txt2{
+        font-size: var(--font-size-medium);
+    }
+    .col1-sec2 button,
+    .col3-sec2 button {
+        width: 100%;
+        margin: 5% 0;
+    }
+    .sets-us-apart{
+        height: auto;
+    }
+    .sua-section1{
+        display: initial;
+    }
+    .sua-description{
+        font-size: var(--font-size-small);
+        width: 100%;
+    }
+    .lotte-animation{
+        width: 60%;
+        margin-left:20%;
+    }
+    .cont1{
+        width:30%;
+    }
+    .cont1 h3{
+        font-size: var(--font-size-small);
+    }
+    .testimonial-3D-image img{
+        width:200px
+    }
+    .review-descp{
+        font-size: 10px;
+        width:100%
+    }
+    .review-images{
+        width: 60%;
+        justify-content: center;
+        align-items: center;
+    }
+    .review-img-1{
+        margin-top: 30%;
+    }
+    .newsletter-img {
+        display: none;
+    }
+}
